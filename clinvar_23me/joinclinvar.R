@@ -10,7 +10,7 @@ cv = bbload('clinvar')$variant_summary |> collect() |>
 cv <- cv |> mutate(pheno = str_split(pheno, "\\|")) |> unnest(pheno)
 cv <- cv |> mutate(signi = str_split(signi, "\\|")) |> unnest(signi)
 
-andme23 <- readr::read_tsv('./data/andme_raw_20160815.txt',
+andme23 <- readr::read_tsv('./23me.txt',
   comment = '#', col_names = c('rsid','id','chr','pos'))
 
 # remove the 'rs' prefix and make `rsid` numeric
