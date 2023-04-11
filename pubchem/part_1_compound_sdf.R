@@ -29,4 +29,4 @@ mw99 <- mw |> filter(percentile > 0.98) |> pull(value) |> first()
 # PLOT
 df <- mw |> filter(value < mw99)
 g <- ggplot(df, aes(x=value, y=cnt)) + geom_col() 
-ggsave("pubchem_mol_weights.png")
+ggsave("pubchem_mol_weights.png",g)
